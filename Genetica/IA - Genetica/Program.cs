@@ -31,7 +31,7 @@
             Cidade cidade10 = new Cidade("Beja", 100, 120);
             GerenciaRota.addCidade(cidade10);
 
-
+            //bla
         }
     }
 }
