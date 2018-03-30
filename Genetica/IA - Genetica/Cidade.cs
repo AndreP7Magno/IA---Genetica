@@ -8,12 +8,12 @@ namespace IA___Genetica
         //Posição Y da cidade no mapa
         private int y;
         //Nome da cidade
-        private String name;
+        private String nome;
 
         //Construtor da classe
-        public Cidade(String name1, int x1, int y1)
+        public Cidade(String nome1, int x1, int y1)
         {
-            name = name1;
+            nome = nome1;
             x = x1;
             y = y1;
         }
@@ -28,15 +28,22 @@ namespace IA___Genetica
         {
             return y;
         }
-        public String getName()
+        public String getNome()
         {
-            return name;
+            return nome;
         }
 
-        public double distanciaParaProximaCidade(Cidade cidade)
+        public double DistanciaParaProximaCidade(Cidade cidade)
         {
-            double distancia = 0;
+            int xDif = Math.Abs(this.x - cidade.x);
+            int yDif = Math.Abs(this.y - cidade.y);
+            double distancia = Math.Sqrt(Math.Pow(xDif, 2) + Math.Pow(yDif, 2));
             return distancia;
+        }
+        override
+        public String ToString()
+        {
+            return "" + nome + "(" + x + "," + y + ")";
         }
     }
 }

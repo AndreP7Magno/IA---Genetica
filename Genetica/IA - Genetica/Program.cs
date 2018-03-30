@@ -1,4 +1,6 @@
-﻿namespace IA___Genetica
+﻿using System;
+
+namespace IA___Genetica
 {
     class Program
     {
@@ -8,7 +10,6 @@
             //TspLib95 library = new TspLib95(dirPath);
             //int counter = library.LoadTSP("bays29");
             //Console.WriteLine("Loaded problems: " + counter);
-
 
             Cidade cidade = new Cidade("Lisboa", 60, 200);
             GerenciaRota.addCidade(cidade);
@@ -31,8 +32,16 @@
             Cidade cidade10 = new Cidade("Beja", 100, 120);
             GerenciaRota.addCidade(cidade10);
 
-            //bla
-            //subindo teste
-        }
+            GerenciaRota lista = new GerenciaRota();
+            lista.PrintaCidade();
+            GerenciaRota rota = new GerenciaRota();
+            rota.GeraRota();
+            rota.PrintaRota();
+            Console.ReadLine();
+
+
+        //bla
+        //subindo teste
+    }
     }
 }
