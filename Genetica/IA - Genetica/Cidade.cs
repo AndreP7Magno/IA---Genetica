@@ -33,10 +33,15 @@ namespace IA___Genetica
             return nome;
         }
 
-        public double DistanciaParaProximaCidade(Cidade cidade)
+        public Cidade()
         {
-            int xDif = Math.Abs(this.x - cidade.x);
-            int yDif = Math.Abs(this.y - cidade.y);
+
+        }
+
+        public double DistanciaParaProximaCidade(Cidade cidade, Cidade cidade2)
+        {
+            int xDif = Math.Abs(cidade.x - cidade2.x);
+            int yDif = Math.Abs(cidade.y - cidade2.y);
             double distancia = Math.Sqrt(Math.Pow(xDif, 2) + Math.Pow(yDif, 2));
             return distancia;
         }
