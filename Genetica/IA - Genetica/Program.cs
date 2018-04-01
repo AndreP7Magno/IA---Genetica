@@ -63,22 +63,22 @@ namespace IA___Genetica
             GerenciaRota.addCidade(cidade25);
 
             GerenciaRota lista = new GerenciaRota();
-            lista.PrintaCidade();
+            //lista.PrintaCidade();
             GerenciaRota rota = new GerenciaRota();
             GerenciaRota rota2 = new GerenciaRota();
             GerenciaRota rota3 = new GerenciaRota();
             GerenciaRota rota4 = new GerenciaRota();
             GerenciaRota rota5 = new GerenciaRota();
             rota.GeraRota();
-            rota.PrintaRota();
+            //rota.PrintaRota();
             rota.GeraRota2();
-            rota.PrintaRota2();
+            //rota.PrintaRota2();
             rota.GeraRota3();
-            rota.PrintaRota3();
+            //rota.PrintaRota3();
             rota.GeraRota4();
-            rota.PrintaRota4();
+            //rota.PrintaRota4();
             rota.GeraRota5();
-            rota.PrintaRota5();
+            //rota.PrintaRota5();
             Console.ReadLine();
     }
     }

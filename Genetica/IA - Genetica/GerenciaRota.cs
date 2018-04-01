@@ -21,8 +21,16 @@ namespace IA___Genetica
         public String pRota5;
         Random random = new Random();
         int[] numeros = new int[26];
+        int[] numeros2 = new int[26];
+        int[] numeros3 = new int[26];
+        int[] numeros4 = new int[26];
+        int[] numeros5 = new int[26];
         private Cidade distanciaRota = new Cidade();
         private Double totalDistanciaRota = 0;
+        private Double totalDistanciaRota2 = 0;
+        private Double totalDistanciaRota3 = 0;
+        private Double totalDistanciaRota4 = 0;
+        private Double totalDistanciaRota5 = 0;
 
         //Adiciona uma cidade à lista de cidades
         public static void addCidade(Cidade cidade)
@@ -94,122 +102,158 @@ namespace IA___Genetica
 
         public void GeraRota2()
         {
-            for (int i = 0; i < numeros.Length; i++)
+            for (int i = 0; i < numeros2.Length; i++)
             {
-                numeros[i] = 26;
+                numeros2[i] = 26;
             }
-            for (int i = 0; i < numeros.Length; i++)
+            for (int i = 0; i < numeros2.Length; i++)
             {
                 while (true)
                 {
                     int temp = random.Next(0, 25);
-                    if (numeros.Contains(temp) == false)
+                    if (numeros2.Contains(temp) == false)
                     {
-                        numeros[i] = temp;
+                        numeros2[i] = temp;
                         break;
                     }
                 }
-                if (i == 25)
+                if (i == 24)
                 {
-                    numeros[26] = numeros[0];
+                    numeros2[25] = numeros2[0];
                     break;
                 }
             }
             //Adiciona na rota
             for (int i = 0; i < NumeroDeCidades(); i++)
             {
-                rota2.Add(GetCidade(numeros[i]));
+                rota2.Add(GetCidade(numeros2[i]));
             }
+
+            for (int i = 0; i < NumeroDeCidades(); i++)
+            {
+                if (i <= 24)
+                {
+                    totalDistanciaRota2 = totalDistanciaRota2 + distanciaRota.DistanciaParaProximaCidade(GetCidade(numeros2[i]), GetCidade(numeros2[i + 1]));
+                }
+            }
+            Console.WriteLine("Distância: " + totalDistanciaRota2);
         }
 
         public void GeraRota3()
         {
-            for (int i = 0; i < numeros.Length; i++)
+            for (int i = 0; i < numeros3.Length; i++)
             {
-                numeros[i] = 26;
+                numeros3[i] = 26;
             }
-            for (int i = 0; i < numeros.Length; i++)
+            for (int i = 0; i < numeros3.Length; i++)
             {
                 while (true)
                 {
                     int temp = random.Next(0, 25);
-                    if (numeros.Contains(temp) == false)
+                    if (numeros3.Contains(temp) == false)
                     {
-                        numeros[i] = temp;
+                        numeros3[i] = temp;
                         break;
                     }
                 }
-                if (i == 25)
+                if (i == 24)
                 {
-                    numeros[26] = numeros[0];
+                    numeros3[25] = numeros3[0];
                     break;
                 }
             }
             //Adiciona na rota
             for (int i = 0; i < NumeroDeCidades(); i++)
             {
-                rota3.Add(GetCidade(numeros[i]));
+                rota3.Add(GetCidade(numeros3[i]));
             }
+
+            for (int i = 0; i < NumeroDeCidades(); i++)
+            {
+                if (i <= 24)
+                {
+                    totalDistanciaRota3 = totalDistanciaRota3 + distanciaRota.DistanciaParaProximaCidade(GetCidade(numeros3[i]), GetCidade(numeros3[i + 1]));
+                }
+            }
+            Console.WriteLine("Distância: " + totalDistanciaRota3);
         }
 
         public void GeraRota4()
         {
-            for (int i = 0; i < numeros.Length; i++)
+            for (int i = 0; i < numeros4.Length; i++)
             {
-                numeros[i] = 26;
+                numeros4[i] = 26;
             }
-            for (int i = 0; i < numeros.Length; i++)
+            for (int i = 0; i < numeros4.Length; i++)
             {
                 while (true)
                 {
                     int temp = random.Next(0, 25);
-                    if (numeros.Contains(temp) == false)
+                    if (numeros4.Contains(temp) == false)
                     {
-                        numeros[i] = temp;
+                        numeros4[i] = temp;
                         break;
                     }
                 }
-                if (i == 25)
+                if (i == 24)
                 {
-                    numeros[26] = numeros[0];
+                    numeros4[25] = numeros4[0];
                     break;
                 }
             }
             //Adiciona na rota
             for (int i = 0; i < NumeroDeCidades(); i++)
             {
-                rota4.Add(GetCidade(numeros[i]));
+                rota4.Add(GetCidade(numeros4[i]));
             }
+
+            for (int i = 0; i < NumeroDeCidades(); i++)
+            {
+                if (i <= 24)
+                {
+                    totalDistanciaRota4 = totalDistanciaRota4 + distanciaRota.DistanciaParaProximaCidade(GetCidade(numeros4[i]), GetCidade(numeros4[i + 1]));
+                }
+            }
+            Console.WriteLine("Distância: " + totalDistanciaRota4);
         }
 
         public void GeraRota5()
         {
-            for (int i = 0; i < numeros.Length; i++)
+            for (int i = 0; i < numeros5.Length; i++)
             {
-                numeros[i] = 26;
+                numeros5[i] = 26;
             }
-            for (int i = 0; i < numeros.Length; i++)
+            for (int i = 0; i < numeros5.Length; i++)
             {
                 while (true)
                 {
                     int temp = random.Next(0, 25);
-                    if (numeros.Contains(temp) == false)
+                    if (numeros5.Contains(temp) == false)
                     {
-                        numeros[i] = temp;
+                        numeros5[i] = temp;
                         break;
                     }
                 }
-                if (i == 25)
+                if (i == 24)
                 {
-                    numeros[26] = numeros[0];
+                    numeros5[25] = numeros5[0];
                     break;
                 }
             }
             //Adiciona na rota
             for (int i = 0; i < NumeroDeCidades(); i++)
             {
-                rota5.Add(GetCidade(numeros[i]));
+                rota5.Add(GetCidade(numeros5[i]));
             }
+
+            for (int i = 0; i < NumeroDeCidades(); i++)
+            {
+                if (i <= 24)
+                {
+                    totalDistanciaRota5 = totalDistanciaRota5 + distanciaRota.DistanciaParaProximaCidade(GetCidade(numeros5[i]), GetCidade(numeros5[i + 1]));
+                }
+            }
+            Console.WriteLine("Distância: " + totalDistanciaRota5);
         }
 
         public String PrintaRota()
@@ -225,7 +269,7 @@ namespace IA___Genetica
 
         public String PrintaRota2()
         {
-            foreach (Cidade cidade in rota)
+            foreach (Cidade cidade in rota2)
             {
                 pRota2 = string.Join<Cidade>(", ", rota2.ToArray());
                 Console.WriteLine("Cidade: " + pRota2.ToString());
@@ -236,7 +280,7 @@ namespace IA___Genetica
 
         public String PrintaRota3()
         {
-            foreach (Cidade cidade in rota)
+            foreach (Cidade cidade in rota3)
             {
                 pRota3 = string.Join<Cidade>(", ", rota3.ToArray());
                 Console.WriteLine("Cidade: " + pRota3.ToString());
@@ -247,7 +291,7 @@ namespace IA___Genetica
 
         public String PrintaRota4()
         {
-            foreach (Cidade cidade in rota)
+            foreach (Cidade cidade in rota4)
             {
                 pRota4 = string.Join<Cidade>(", ", rota4.ToArray());
                 Console.WriteLine("Cidade: " + pRota4.ToString());
@@ -258,7 +302,7 @@ namespace IA___Genetica
 
         public String PrintaRota5()
         {
-            foreach (Cidade cidade in rota)
+            foreach (Cidade cidade in rota5)
             {
                 pRota5 = string.Join<Cidade>(", ", rota5.ToArray());
                 Console.WriteLine("Cidade: " + pRota5.ToString());
