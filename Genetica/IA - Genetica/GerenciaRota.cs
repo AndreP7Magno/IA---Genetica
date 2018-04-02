@@ -31,6 +31,11 @@ namespace IA___Genetica
         private Double totalDistanciaRota3 = 0;
         private Double totalDistanciaRota4 = 0;
         private Double totalDistanciaRota5 = 0;
+        private Double fitness = 0;
+        private Double fitness2 = 0;
+        private Double fitness3 = 0;
+        private Double fitness4 = 0;
+        private Double fitness5 = 0;
 
         //Adiciona uma cidade à lista de cidades
         public static void addCidade(Cidade cidade)
@@ -58,6 +63,56 @@ namespace IA___Genetica
         public static Cidade GetCidade(int index)
         {
             return cidadesDestino[index];
+        }
+
+        public int[] GetMelhor()
+        {
+            if(totalDistanciaRota > totalDistanciaRota2 && totalDistanciaRota > totalDistanciaRota3 && totalDistanciaRota > totalDistanciaRota4 && totalDistanciaRota > totalDistanciaRota5)
+            {
+                return numeros;
+            }
+
+            if (totalDistanciaRota2 > totalDistanciaRota && totalDistanciaRota2 > totalDistanciaRota3 && totalDistanciaRota2 > totalDistanciaRota4 && totalDistanciaRota2 > totalDistanciaRota5)
+            {
+                return numeros2;
+            }
+
+            if (totalDistanciaRota3 > totalDistanciaRota && totalDistanciaRota3 > totalDistanciaRota2 && totalDistanciaRota3 > totalDistanciaRota4 && totalDistanciaRota3 > totalDistanciaRota5)
+            {
+                return numeros3;
+            }
+
+            if (totalDistanciaRota4 > totalDistanciaRota && totalDistanciaRota4 > totalDistanciaRota2 && totalDistanciaRota4 > totalDistanciaRota3 && totalDistanciaRota4 > totalDistanciaRota5)
+            {
+                return numeros4;
+            }
+
+            return numeros5;
+        }
+
+        public int[] GetPior()
+        {
+            if (totalDistanciaRota < totalDistanciaRota2 && totalDistanciaRota < totalDistanciaRota3 && totalDistanciaRota < totalDistanciaRota4 && totalDistanciaRota < totalDistanciaRota5)
+            {
+                return numeros;
+            }
+
+            if (totalDistanciaRota2 < totalDistanciaRota && totalDistanciaRota2 < totalDistanciaRota3 && totalDistanciaRota2 < totalDistanciaRota4 && totalDistanciaRota2 < totalDistanciaRota5)
+            {
+                return numeros2;
+            }
+
+            if (totalDistanciaRota3 < totalDistanciaRota && totalDistanciaRota3 < totalDistanciaRota2 && totalDistanciaRota3 < totalDistanciaRota4 && totalDistanciaRota3 < totalDistanciaRota5)
+            {
+                return numeros3;
+            }
+
+            if (totalDistanciaRota4 < totalDistanciaRota && totalDistanciaRota4 < totalDistanciaRota2 && totalDistanciaRota4 < totalDistanciaRota3 && totalDistanciaRota4 < totalDistanciaRota5)
+            {
+                return numeros4;
+            }
+
+            return numeros5;
         }
 
         public void GeraRota()
