@@ -79,6 +79,7 @@ namespace IA___Genetica
             //rota.PrintaRota4();
             rota.GeraRota5();
             //rota.PrintaRota5();
+            rota.Selecao(rota.GetMelhor(), rota.GetPior());
             Console.ReadLine();
     }
     }

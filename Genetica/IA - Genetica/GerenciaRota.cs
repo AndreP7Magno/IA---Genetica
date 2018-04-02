@@ -55,6 +55,65 @@ namespace IA___Genetica
             return pCidade;
         }
 
+        public void Selecao(int[] melhor, int[] pior)
+        {
+            for (int i = 0; i < melhor.Length; i++)
+            {
+                if (i < 12)
+                {
+                    melhor[i] = melhor[i];
+                    pior[i] = pior[i];
+                }
+                else if (i >= 12 && i < melhor.Length)
+                {
+                    melhor[i] = pior[i];
+                    pior[i] = melhor[i];
+       
+                }
+                else if (i == melhor.Length)
+                {
+                    melhor[i] = melhor[0];
+                    pior[i] = pior[0];
+                }
+            }
+            Console.WriteLine("Melhor");
+            for (int i = 0; i < melhor.Length; i++)
+            {
+                Console.Write(" " + melhor[i]);
+            }
+            Console.WriteLine();
+            Console.WriteLine("Pior");
+            for (int i = 0; i < melhor.Length; i++)
+            {
+                Console.Write(" " + pior[i]);
+            }
+            Console.WriteLine();
+            for (int i = 0; i < melhor.Length; i++)
+            {
+                Console.Write(" " + numeros[i]);
+            }
+            Console.WriteLine();
+            for (int i = 0; i < melhor.Length; i++)
+            {
+                Console.Write(" " + numeros2[i]);
+            }
+            Console.WriteLine();
+            for (int i = 0; i < melhor.Length; i++)
+            {
+                Console.Write(" " + numeros3[i]);
+            }
+            Console.WriteLine();
+            for (int i = 0; i < melhor.Length; i++)
+            {
+                Console.Write(" " + numeros4[i]);
+            }
+            Console.WriteLine();
+            for (int i = 0; i < melhor.Length; i++)
+            {
+                Console.Write(" " + numeros5[i]);
+            }
+        }
+
         public static int NumeroDeCidades()
         {
             return cidadesDestino.Count + 1;
@@ -65,7 +124,7 @@ namespace IA___Genetica
             return cidadesDestino[index];
         }
 
-        public int[] GetMelhor()
+        public int[] GetPior()
         {
             if(totalDistanciaRota > totalDistanciaRota2 && totalDistanciaRota > totalDistanciaRota3 && totalDistanciaRota > totalDistanciaRota4 && totalDistanciaRota > totalDistanciaRota5)
             {
@@ -90,7 +149,7 @@ namespace IA___Genetica
             return numeros5;
         }
 
-        public int[] GetPior()
+        public int[] GetMelhor()
         {
             if (totalDistanciaRota < totalDistanciaRota2 && totalDistanciaRota < totalDistanciaRota3 && totalDistanciaRota < totalDistanciaRota4 && totalDistanciaRota < totalDistanciaRota5)
             {
