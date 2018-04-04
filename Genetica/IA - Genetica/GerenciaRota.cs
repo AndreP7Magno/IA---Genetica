@@ -53,6 +53,7 @@ namespace IA___Genetica
         private Double totalDistanciaRota8 = 0;
         private Double totalDistanciaRota9 = 0;
         private Double totalDistanciaRota10 = 0;
+        private Double melhorDistancia = 0;
         private Double fitness = 0;
         private Double fitness2 = 0;
         private Double fitness3 = 0;
@@ -108,7 +109,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness = 1 / totalDistanciaRota;
-                Console.WriteLine("Distância: " + totalDistanciaRota);
+                Console.WriteLine("Distância: " + totalDistanciaRota.ToString("#0"));
             }
             else if (GetPior() == numeros2)
             {
@@ -123,7 +124,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness2 = 1 / totalDistanciaRota2;
-                Console.WriteLine("Distância: " + totalDistanciaRota2);
+                Console.WriteLine("Distância: " + totalDistanciaRota2.ToString("#0"));
             }
             else if (GetPior() == numeros3)
             {
@@ -138,7 +139,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness3 = 1 / totalDistanciaRota3;
-                Console.WriteLine("Distância: " + totalDistanciaRota3);
+                Console.WriteLine("Distância: " + totalDistanciaRota3.ToString("#0"));
             }
             else if (GetPior() == numeros4)
             {
@@ -153,7 +154,22 @@ namespace IA___Genetica
                     }
                 }
                 fitness4 = 1 / totalDistanciaRota4;
-                Console.WriteLine("Distância: " + totalDistanciaRota4);
+                Console.WriteLine("Distância: " + totalDistanciaRota4.ToString("#0"));
+            }
+            else if (GetPior() == numeros5)
+            {
+                rota5.Clear();
+                totalDistanciaRota5 = 0;
+                for (int i = 0; i < numeros5.Length; i++)
+                {
+                    rota4.Add(GetCidade(piorSub[i]));
+                    if (i <= 24)
+                    {
+                        totalDistanciaRota5 = totalDistanciaRota5 + distanciaRota.DistanciaParaProximaCidade(GetCidade(piorSub[i]), GetCidade(piorSub[i + 1]));
+                    }
+                }
+                fitness5 = 1 / totalDistanciaRota5;
+                Console.WriteLine("Distância: " + totalDistanciaRota5.ToString("#0"));
             }
             else if (GetPior() == numeros6)
             {
@@ -168,7 +184,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness6 = 1 / totalDistanciaRota6;
-                Console.WriteLine("Distância: " + totalDistanciaRota6);
+                Console.WriteLine("Distância: " + totalDistanciaRota6.ToString("#0"));
             }
             else if (GetPior() == numeros7)
             {
@@ -183,7 +199,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness7 = 1 / totalDistanciaRota7;
-                Console.WriteLine("Distância: " + totalDistanciaRota7);
+                Console.WriteLine("Distância: " + totalDistanciaRota7.ToString("#0"));
             }
             else if (GetPior() == numeros8)
             {
@@ -198,7 +214,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness8 = 1 / totalDistanciaRota8;
-                Console.WriteLine("Distância: " + totalDistanciaRota8);
+                Console.WriteLine("Distância: " + totalDistanciaRota8.ToString("#0"));
             }
             else if (GetPior() == numeros9)
             {
@@ -213,7 +229,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness9 = 1 / totalDistanciaRota9;
-                Console.WriteLine("Distância: " + totalDistanciaRota9);
+                Console.WriteLine("Distância: " + totalDistanciaRota9.ToString("#0"));
             }
             else
             {
@@ -228,7 +244,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness10 = 1 / totalDistanciaRota10;
-                Console.WriteLine("Distância: " + totalDistanciaRota10);
+                Console.WriteLine("Distância: " + totalDistanciaRota10.ToString("#0"));
             }
 
             if (GetMelhor() == numeros)
@@ -241,6 +257,7 @@ namespace IA___Genetica
                     if (i <= 24)
                     {
                         totalDistanciaRota = totalDistanciaRota + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
+                        melhorDistancia = totalDistanciaRota + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
                     }
                 }
                 fitness = 1 / totalDistanciaRota;
@@ -256,6 +273,7 @@ namespace IA___Genetica
                     if (i <= 24)
                     {
                         totalDistanciaRota2 = totalDistanciaRota2 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
+                        melhorDistancia = totalDistanciaRota2 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
                     }
                 }
                 fitness2 = 1 / totalDistanciaRota2;
@@ -271,6 +289,7 @@ namespace IA___Genetica
                     if (i <= 24)
                     {
                         totalDistanciaRota3 = totalDistanciaRota3 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
+                        melhorDistancia = totalDistanciaRota3 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
                     }
                 }
                 fitness3 = 1 / totalDistanciaRota3;
@@ -286,6 +305,7 @@ namespace IA___Genetica
                     if (i <= 24)
                     {
                         totalDistanciaRota4 = totalDistanciaRota4 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
+                        melhorDistancia = totalDistanciaRota4 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
                     }
                 }
                 fitness4 = 1 / totalDistanciaRota4;
@@ -301,6 +321,7 @@ namespace IA___Genetica
                     if (i <= 24)
                     {
                         totalDistanciaRota5 = totalDistanciaRota5 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
+                        melhorDistancia = totalDistanciaRota5 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
                     }
                 }
                 fitness5 = 1 / totalDistanciaRota5;
@@ -316,6 +337,7 @@ namespace IA___Genetica
                     if (i <= 24)
                     {
                         totalDistanciaRota6 = totalDistanciaRota6 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
+                        melhorDistancia = totalDistanciaRota6 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
                     }
                 }
                 fitness6 = 1 / totalDistanciaRota6;
@@ -331,6 +353,7 @@ namespace IA___Genetica
                     if (i <= 24)
                     {
                         totalDistanciaRota7 = totalDistanciaRota7 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
+                        melhorDistancia = totalDistanciaRota7 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
                     }
                 }
                 fitness7 = 1 / totalDistanciaRota7;
@@ -346,6 +369,7 @@ namespace IA___Genetica
                     if (i <= 24)
                     {
                         totalDistanciaRota8 = totalDistanciaRota8 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
+                        melhorDistancia = totalDistanciaRota8 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
                     }
                 }
                 fitness8 = 1 / totalDistanciaRota8;
@@ -361,6 +385,7 @@ namespace IA___Genetica
                     if (i <= 24)
                     {
                         totalDistanciaRota9 = totalDistanciaRota9 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
+                        melhorDistancia = totalDistanciaRota9 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
                     }
                 }
                 fitness9 = 1 / totalDistanciaRota9;
@@ -376,6 +401,7 @@ namespace IA___Genetica
                     if (i <= 24)
                     {
                         totalDistanciaRota10 = totalDistanciaRota10 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
+                        melhorDistancia = totalDistanciaRota10 + distanciaRota.DistanciaParaProximaCidade(GetCidade(melhorSub[i]), GetCidade(melhorSub[i + 1]));
                     }
                 }
                 fitness10 = 1 / totalDistanciaRota10;
@@ -392,17 +418,79 @@ namespace IA___Genetica
             {
                 if (i >= primeiraPosicaoCruzamento && i <= ultimaPosicaoCruzamento && i < numeros.Length)
                 {
-                    melhorSub[i] = pior[i];
-                    piorSub[i] = melhor[i];
-                    melhor[i] = pior[i];
-                    pior[i] = aux;
+                    if (melhorSub.Contains(pior[i]) || piorSub.Contains(melhor[i]))
+                    {
+                        while (true)
+                        {
+                            int temp = random.Next(0, 25);
+                            if (melhorSub.Contains(temp) == false)
+                            {
+                                melhorSub[i] = temp;
+                                break;
+                            }
+                            else if(melhorSub.Contains(temp) == true)
+                            {
+                                melhorSub[i] = pior[i];
+                                break;
+                            }
+                            if (piorSub.Contains(temp) == false)
+                            {
+                                piorSub[i] = temp;
+                                break;
+                            }
+                            else
+                            {
+                                piorSub[i] = melhor[i];
+                                break;
+                            }
+                        }
+                        melhor[i] = pior[i];
+                        pior[i] = aux;
+                    }
+                    else
+                    {
+                        melhorSub[i] = pior[i];
+                        piorSub[i] = melhor[i];
+                        melhor[i] = pior[i];
+                        pior[i] = aux;
+                    }
                 }
                 else if (i < primeiraPosicaoCruzamento || i > ultimaPosicaoCruzamento && i < numeros.Length)
                 {
-                    melhorSub[i] = melhor[i];
-                    piorSub[i] = pior[i];
-                    melhor[i] = melhor[i];
-                    pior[i] = pior[i];
+                    if (melhorSub.Contains(melhor[i]) || piorSub.Contains(pior[i]))
+                    {
+                        while (true)
+                        {
+                            int temp = random.Next(0, 25);
+                            if (melhorSub.Contains(temp) == false)
+                            {
+                                melhorSub[i] = temp;
+                                break;
+                            }
+                            else if (melhorSub.Contains(temp) == true)
+                            {
+                                melhorSub[i] = melhor[i];
+                            }
+                            if (piorSub.Contains(temp) == false)
+                            {
+                                piorSub[i] = temp;
+                                break;
+                            }
+                            else
+                            {
+                                piorSub[i] = pior[i];
+                            }
+                        }
+                        melhor[i] = melhor[i];
+                        pior[i] = aux;
+                    }
+                    else
+                    {
+                        melhorSub[i] = melhor[i];
+                        piorSub[i] = pior[i];
+                        melhor[i] = melhor[i];
+                        pior[i] = pior[i];
+                    }
                 }
                 else if (i == numeros.Length)
                 {
