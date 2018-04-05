@@ -6,10 +6,8 @@ namespace IA___Genetica
     {
         static void Main(string[] args)
         {
-            //string dirPath = @"C:\Users\Willian\Desktop\TSPLIB95";
-            //TspLib95 library = new TspLib95(dirPath);
-            //int counter = library.LoadTSP("bays29");
-            //Console.WriteLine("Loaded problems: " + counter);
+            //Taxa de geração é quantos % dos membros participarão do cruzamento
+            //Mutação é trocar duas posições aleatórias do vetor em todos os filhos
 
             Cidade cidade = new Cidade("Lisboa", 60, 200);
             GerenciaRota.AddCidade(cidade);
