@@ -79,6 +79,7 @@ namespace IA___Genetica
                 Console.WriteLine("Geração: " + i);
                 rota.Selecao(rota.GetMelhor(), rota.GetPior());
                 rota.SubstituiRotas();
+                rota.Mutar();
                 rota.ZeraVetores();
             }
             Console.ReadLine();

@@ -502,6 +502,20 @@ namespace IA___Genetica
             }
         }
 
+        public void Mutar()
+        {
+            int primeiraPosicaoMutacao = random.Next(0, 25);
+            int segundaPosicaoMutacao = random.Next(0, 25);
+            int aux;
+            aux = melhorSub[primeiraPosicaoMutacao];
+            melhorSub[primeiraPosicaoMutacao] = melhorSub[segundaPosicaoMutacao];
+            melhorSub[segundaPosicaoMutacao] = aux;
+            aux = piorSub[primeiraPosicaoMutacao];
+            piorSub[primeiraPosicaoMutacao] = piorSub[segundaPosicaoMutacao];
+            piorSub[segundaPosicaoMutacao] = aux;
+        }
+
+
         public static int NumeroDeCidades()
         {
             return cidadesDestino.Count + 1;
