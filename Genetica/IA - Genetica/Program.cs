@@ -8,7 +8,6 @@ namespace IA___Genetica
         {
             //Taxa de geração é quantos % dos membros participarão do cruzamento
             //Mutação é trocar duas posições aleatórias do vetor em todos os filhos
-
             Cidade cidade = new Cidade("Lisboa", 60, 200);
             GerenciaRota.AddCidade(cidade);
             Cidade cidade2 = new Cidade("Santarém", 180, 200);
@@ -75,7 +74,7 @@ namespace IA___Genetica
             for (int i = 1; i < 1001; i++)
             {
                 Console.WriteLine("Geração: " + i);
-                rota.Selecao(rota.GetMelhor(), rota.GetPior());
+                rota.Selecao30(rota.Get1(), rota.Get2(), rota.Get3(), 30);
                 rota.SubstituiRotas();
                 rota.Mutar();
                 rota.ZeraVetores();
