@@ -45,6 +45,12 @@ namespace IA___Genetica
         int[] melhorSub2 = new int[26];
         int[] melhorSub3 = new int[26];
         int[] melhorSub4 = new int[26];
+        int[] melhorSub5 = new int[26];
+        int[] melhorSub6 = new int[26];
+        int[] melhorSub7 = new int[26];
+        int[] melhorSub8 = new int[26];
+        int[] melhorSub9 = new int[26];
+        int[] melhorSub10 = new int[26];
         private Cidade distanciaRota = new Cidade();
         private Double totalDistanciaRota = 0;
         private Double totalDistanciaRota2 = 0;
@@ -506,7 +512,7 @@ namespace IA___Genetica
             }
         }
 
-        public void Selecao30(int[] num, int[] num2, int[] num3, int taxaGeracao1)
+        public void Selecao30(int[] num, int[] num2, int[] num3)
         {
             primeiraPosicaoCruzamento = random.Next(0, 25);
             ultimaPosicaoCruzamento = random.Next(primeiraPosicaoCruzamento, 25);
@@ -691,18 +697,398 @@ namespace IA___Genetica
             }
         }
 
+        public void Selecao60(int[] num, int[] num2, int[] num3, int[] num4, int[] num5, int[] num6)
+        {
+            primeiraPosicaoCruzamento = random.Next(0, 25);
+            ultimaPosicaoCruzamento = random.Next(primeiraPosicaoCruzamento, 25);
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                if (i >= primeiraPosicaoCruzamento && i <= ultimaPosicaoCruzamento && i < numeros.Length)
+                {
+                    if (melhorSub.Contains(num2[i]) || piorSub.Contains(num[i]))
+                    {
+                        while (true)
+                        {
+                            int temp = random.Next(0, 25);
+                            if (melhorSub.Contains(temp) == false)
+                            {
+                                melhorSub[i] = temp;
+                                break;
+                            }
+                            else if (melhorSub.Contains(temp) == true)
+                            {
+                                melhorSub[i] = num2[i];
+                                break;
+                            }
+                            if (piorSub.Contains(temp) == false)
+                            {
+                                piorSub[i] = temp;
+                                break;
+                            }
+                            else
+                            {
+                                piorSub[i] = num[i];
+                                break;
+                            }
+                        }
+                        num[i] = num2[i];
+                        num2[i] = aux;
+                    }
+                    else
+                    {
+                        melhorSub[i] = num2[i];
+                        piorSub[i] = num[i];
+                        num[i] = num2[i];
+                        num2[i] = aux;
+                    }
+                }
+                else if (i < primeiraPosicaoCruzamento || i > ultimaPosicaoCruzamento && i < numeros.Length)
+                {
+                    if (melhorSub.Contains(num[i]) || piorSub.Contains(num2[i]))
+                    {
+                        while (true)
+                        {
+                            int temp = random.Next(0, 25);
+                            if (melhorSub.Contains(temp) == false)
+                            {
+                                melhorSub[i] = temp;
+                                break;
+                            }
+                            else if (melhorSub.Contains(temp) == true)
+                            {
+                                melhorSub[i] = num[i];
+                                break;
+                            }
+                            if (piorSub.Contains(temp) == false)
+                            {
+                                piorSub[i] = temp;
+                                break;
+                            }
+                            else
+                            {
+                                piorSub[i] = num2[i];
+                                break;
+                            }
+                        }
+                        num[i] = num2[i];
+                        num[i] = aux;
+                    }
+                    else
+                    {
+                        melhorSub[i] = num[i];
+                        piorSub[i] = num2[i];
+                        num[i] = num[i];
+                        num2[i] = num2[i];
+                    }
+                }
+                else if (i == numeros.Length)
+                {
+                    melhorSub[i] = melhorSub[0];
+                    piorSub[i] = piorSub[0];
+                    num[i] = num[0];
+                    num2[i] = num2[0];
+                }
+            }
+
+            primeiraPosicaoCruzamento = random.Next(0, 25);
+            ultimaPosicaoCruzamento = random.Next(primeiraPosicaoCruzamento, 25);
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                if (i >= primeiraPosicaoCruzamento && i <= ultimaPosicaoCruzamento && i < numeros.Length)
+                {
+                    if (melhorSub.Contains(num3[i]) || melhorSub2.Contains(num[i]))
+                    {
+                        while (true)
+                        {
+                            int temp = random.Next(0, 25);
+                            if (melhorSub.Contains(temp) == false)
+                            {
+                                melhorSub[i] = temp;
+                                break;
+                            }
+                            else if (melhorSub.Contains(temp) == true)
+                            {
+                                melhorSub[i] = num3[i];
+                                break;
+                            }
+                            if (piorSub.Contains(temp) == false)
+                            {
+                                melhorSub2[i] = temp;
+                                break;
+                            }
+                            else
+                            {
+                                melhorSub2[i] = num[i];
+                                break;
+                            }
+                        }
+                        num[i] = num3[i];
+                        num[i] = aux;
+                    }
+                    else
+                    {
+                        melhorSub[i] = num3[i];
+                        melhorSub2[i] = num[i];
+                        num[i] = num3[i];
+                        num3[i] = aux;
+                    }
+                }
+                else if (i < primeiraPosicaoCruzamento || i > ultimaPosicaoCruzamento && i < numeros.Length)
+                {
+                    if (melhorSub.Contains(num[i]) || melhorSub2.Contains(num3[i]))
+                    {
+                        while (true)
+                        {
+                            int temp = random.Next(0, 25);
+                            if (melhorSub.Contains(temp) == false)
+                            {
+                                melhorSub[i] = temp;
+                                break;
+                            }
+                            else if (melhorSub.Contains(temp) == true)
+                            {
+                                melhorSub[i] = num[i];
+                                break;
+                            }
+                            if (melhorSub2.Contains(temp) == false)
+                            {
+                                melhorSub2[i] = temp;
+                                break;
+                            }
+                            else
+                            {
+                                melhorSub2[i] = num3[i];
+                            }
+                        }
+                        num[i] = num[i];
+                        num3[i] = aux;
+                    }
+                    else
+                    {
+                        melhorSub[i] = num[i];
+                        melhorSub2[i] = num3[i];
+                        num[i] = num[i];
+                        num3[i] = num3[i];
+                    }
+                }
+                else if (i == numeros.Length)
+                {
+                    melhorSub[i] = melhorSub[0];
+                    melhorSub2[i] = melhorSub2[0];
+                    num[i] = num[0];
+                    num3[i] = num3[0];
+                }
+            }
+
+            primeiraPosicaoCruzamento = random.Next(0, 25);
+            ultimaPosicaoCruzamento = random.Next(primeiraPosicaoCruzamento, 25);
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                if (i >= primeiraPosicaoCruzamento && i <= ultimaPosicaoCruzamento && i < numeros.Length)
+                {
+                    if (melhorSub3.Contains(num4[i]) || melhorSub4.Contains(num3[i]))
+                    {
+                        while (true)
+                        {
+                            int temp = random.Next(0, 25);
+                            if (melhorSub3.Contains(temp) == false)
+                            {
+                                melhorSub3[i] = temp;
+                                break;
+                            }
+                            else if (melhorSub3.Contains(temp) == true)
+                            {
+                                melhorSub3[i] = num4[i];
+                                break;
+                            }
+                            if (piorSub.Contains(temp) == false)
+                            {
+                                melhorSub4[i] = temp;
+                                break;
+                            }
+                            else
+                            {
+                                melhorSub4[i] = num3[i];
+                                break;
+                            }
+                        }
+                        num4[i] = num3[i];
+                        num3[i] = aux;
+                    }
+                    else
+                    {
+                        melhorSub3[i] = num4[i];
+                        melhorSub4[i] = num3[i];
+                        num3[i] = num4[i];
+                        num4[i] = aux;
+                    }
+                }
+                else if (i < primeiraPosicaoCruzamento || i > ultimaPosicaoCruzamento && i < numeros.Length)
+                {
+                    if (melhorSub3.Contains(num3[i]) || melhorSub4.Contains(num4[i]))
+                    {
+                        while (true)
+                        {
+                            int temp = random.Next(0, 25);
+                            if (melhorSub3.Contains(temp) == false)
+                            {
+                                melhorSub3[i] = temp;
+                                break;
+                            }
+                            else if (melhorSub3.Contains(temp) == true)
+                            {
+                                melhorSub3[i] = num3[i];
+                                break;
+                            }
+                            if (melhorSub4.Contains(temp) == false)
+                            {
+                                melhorSub4[i] = temp;
+                                break;
+                            }
+                            else
+                            {
+                                melhorSub4[i] = num4[i];
+                                break;
+                            }
+                        }
+                        num4[i] = num3[i];
+                        num4[i] = aux;
+                    }
+                    else
+                    {
+                        melhorSub3[i] = num3[i];
+                        melhorSub4[i] = num4[i];
+                        num3[i] = num3[i];
+                        num4[i] = num4[i];
+                    }
+                }
+                else if (i == numeros.Length)
+                {
+                    melhorSub3[i] = melhorSub3[0];
+                    melhorSub4[i] = melhorSub4[0];
+                    num3[i] = num3[0];
+                    num4[i] = num4[0];
+                }
+            }
+
+            primeiraPosicaoCruzamento = random.Next(0, 25);
+            ultimaPosicaoCruzamento = random.Next(primeiraPosicaoCruzamento, 25);
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                if (i >= primeiraPosicaoCruzamento && i <= ultimaPosicaoCruzamento && i < numeros.Length)
+                {
+                    if (melhorSub5.Contains(num6[i]) || melhorSub6.Contains(num5[i]))
+                    {
+                        while (true)
+                        {
+                            int temp = random.Next(0, 25);
+                            if (melhorSub.Contains(temp) == false)
+                            {
+                                melhorSub5[i] = temp;
+                                break;
+                            }
+                            else if (melhorSub.Contains(temp) == true)
+                            {
+                                melhorSub5[i] = num6[i];
+                                break;
+                            }
+                            if (melhorSub6.Contains(temp) == false)
+                            {
+                                melhorSub6[i] = temp;
+                                break;
+                            }
+                            else
+                            {
+                                melhorSub6[i] = num5[i];
+                                break;
+                            }
+                        }
+                        num6[i] = num5[i];
+                        num6[i] = aux;
+                    }
+                    else
+                    {
+                        melhorSub5[i] = num6[i];
+                        melhorSub6[i] = num5[i];
+                        num6[i] = num5[i];
+                        num5[i] = aux;
+                    }
+                }
+                else if (i < primeiraPosicaoCruzamento || i > ultimaPosicaoCruzamento && i < numeros.Length)
+                {
+                    if (melhorSub5.Contains(num5[i]) || melhorSub6.Contains(num6[i]))
+                    {
+                        while (true)
+                        {
+                            int temp = random.Next(0, 25);
+                            if (melhorSub5.Contains(temp) == false)
+                            {
+                                melhorSub5[i] = temp;
+                                break;
+                            }
+                            else if (melhorSub5.Contains(temp) == true)
+                            {
+                                melhorSub5[i] = num5[i];
+                                break;
+                            }
+                            if (melhorSub6.Contains(temp) == false)
+                            {
+                                melhorSub6[i] = temp;
+                                break;
+                            }
+                            else
+                            {
+                                melhorSub6[i] = num6[i];
+                            }
+                        }
+                        num5[i] = num5[i];
+                        num6[i] = aux;
+                    }
+                    else
+                    {
+                        melhorSub6[i] = num6[i];
+                        melhorSub5[i] = num5[i];
+                        num5[i] = num5[i];
+                        num6[i] = num6[i];
+                    }
+                }
+                else if (i == numeros.Length)
+                {
+                    melhorSub6[i] = melhorSub6[0];
+                    melhorSub5[i] = melhorSub5[0];
+                    num5[i] = num5[0];
+                    num6[i] = num6[0];
+                }
+            }
+        }
+
         public int[] Get1() {
             return numeros;
         }
 
         public int[] Get2()
         {
-            return numeros;
+            return numeros2;
         }
 
         public int[] Get3()
         {
-            return numeros;
+            return numeros3;
+        }
+
+        public int[] Get4()
+        {
+            return numeros4;
+        }
+
+        public int[] Get5()
+        {
+            return numeros5;
+        }
+
+        public int[] Get6()
+        {
+            return numeros6;
         }
 
         public void Mutar()
