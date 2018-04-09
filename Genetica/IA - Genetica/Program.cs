@@ -58,7 +58,7 @@ namespace IA___Genetica
             GerenciaRota.AddCidade(cidade24);
             Cidade cidade25 = new Cidade("Maia", 100, 95);
             GerenciaRota.AddCidade(cidade25);
-            int taxaGeracao = 60;
+            int taxaGeracao = 90;
 
             GerenciaRota rota = new GerenciaRota();
             rota.GeraRota();
@@ -85,6 +85,14 @@ namespace IA___Genetica
                 {
                     Console.WriteLine("Geração: " + i);
                     rota.Selecao60(rota.Get1(), rota.Get2(), rota.Get3(), rota.Get4(), rota.Get5(), rota.Get6());
+                    rota.SubstituiRotas();
+                    rota.Mutar();
+                    rota.ZeraVetores();
+                }
+                else
+                {
+                    Console.WriteLine("Geração: " + i);
+                    rota.Selecao90(rota.Get1(), rota.Get2(), rota.Get3(), rota.Get4(), rota.Get5(), rota.Get6(), rota.Get7(), rota.Get8(), rota.Get9());
                     rota.SubstituiRotas();
                     rota.Mutar();
                     rota.ZeraVetores();
