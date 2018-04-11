@@ -1666,6 +1666,30 @@ namespace IA___Genetica
             aux = melhorSub2[primeiraPosicaoMutacao];
             melhorSub2[primeiraPosicaoMutacao] = melhorSub2[segundaPosicaoMutacao];
             melhorSub2[segundaPosicaoMutacao] = aux;
+            aux = melhorSub3[primeiraPosicaoMutacao];
+            melhorSub3[primeiraPosicaoMutacao] = melhorSub3[segundaPosicaoMutacao];
+            melhorSub3[segundaPosicaoMutacao] = aux;
+            aux = melhorSub4[primeiraPosicaoMutacao];
+            melhorSub4[primeiraPosicaoMutacao] = melhorSub4[segundaPosicaoMutacao];
+            melhorSub4[segundaPosicaoMutacao] = aux;
+            aux = melhorSub5[primeiraPosicaoMutacao];
+            melhorSub5[primeiraPosicaoMutacao] = melhorSub5[segundaPosicaoMutacao];
+            melhorSub5[segundaPosicaoMutacao] = aux;
+            aux = melhorSub6[primeiraPosicaoMutacao];
+            melhorSub6[primeiraPosicaoMutacao] = melhorSub6[segundaPosicaoMutacao];
+            melhorSub6[segundaPosicaoMutacao] = aux;
+            aux = melhorSub7[primeiraPosicaoMutacao];
+            melhorSub7[primeiraPosicaoMutacao] = melhorSub7[segundaPosicaoMutacao];
+            melhorSub7[segundaPosicaoMutacao] = aux;
+            aux = melhorSub8[primeiraPosicaoMutacao];
+            melhorSub8[primeiraPosicaoMutacao] = melhorSub8[segundaPosicaoMutacao];
+            melhorSub8[segundaPosicaoMutacao] = aux;
+            aux = melhorSub9[primeiraPosicaoMutacao];
+            melhorSub9[primeiraPosicaoMutacao] = melhorSub9[segundaPosicaoMutacao];
+            melhorSub9[segundaPosicaoMutacao] = aux;
+            aux = melhorSub10[primeiraPosicaoMutacao];
+            melhorSub10[primeiraPosicaoMutacao] = melhorSub10[segundaPosicaoMutacao];
+            melhorSub10[segundaPosicaoMutacao] = aux;
         }
 
 
