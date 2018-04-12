@@ -76,6 +76,8 @@ namespace IA___Genetica
         private int aux = 0;
         private int primeiraPosicaoCruzamento = 0;
         private int ultimaPosicaoCruzamento = 0;
+        private double melhor = 0;
+        private double melhor2 = 0;
 
         //Adiciona uma cidade à lista de cidades
         public static void AddCidade(Cidade cidade)
@@ -119,7 +121,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness = 1 / totalDistanciaRota;
-                Console.WriteLine("Distância: " + totalDistanciaRota.ToString("#0"));
+                //Console.WriteLine("Distância: " + totalDistanciaRota.ToString("#0"));
             }
             else if (Get2() == numeros2)
             {
@@ -134,7 +136,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness2 = 1 / totalDistanciaRota2;
-                Console.WriteLine("Distância: " + totalDistanciaRota2.ToString("#0"));
+                //Console.WriteLine("Distância: " + totalDistanciaRota2.ToString("#0"));
             }
             else if (Get3() == numeros3)
             {
@@ -149,7 +151,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness3 = 1 / totalDistanciaRota3;
-                Console.WriteLine("Distância: " + totalDistanciaRota3.ToString("#0"));
+                //Console.WriteLine("Distância: " + totalDistanciaRota3.ToString("#0"));
             }
             else if (Get4() == numeros4)
             {
@@ -164,7 +166,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness4 = 1 / totalDistanciaRota4;
-                Console.WriteLine("Distância: " + totalDistanciaRota4.ToString("#0"));
+                //Console.WriteLine("Distância: " + totalDistanciaRota4.ToString("#0"));
             }
             else if (Get5() == numeros5)
             {
@@ -179,7 +181,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness5 = 1 / totalDistanciaRota5;
-                Console.WriteLine("Distância: " + totalDistanciaRota5.ToString("#0"));
+                //Console.WriteLine("Distância: " + totalDistanciaRota5.ToString("#0"));
             }
             else if (Get6() == numeros6)
             {
@@ -194,7 +196,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness6 = 1 / totalDistanciaRota6;
-                Console.WriteLine("Distância: " + totalDistanciaRota6.ToString("#0"));
+                //Console.WriteLine("Distância: " + totalDistanciaRota6.ToString("#0"));
             }
             else if (Get7() == numeros7)
             {
@@ -209,7 +211,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness7 = 1 / totalDistanciaRota7;
-                Console.WriteLine("Distância: " + totalDistanciaRota7.ToString("#0"));
+                //Console.WriteLine("Distância: " + totalDistanciaRota7.ToString("#0"));
             }
             else if (Get8() == numeros8)
             {
@@ -224,7 +226,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness8 = 1 / totalDistanciaRota8;
-                Console.WriteLine("Distância: " + totalDistanciaRota8.ToString("#0"));
+                //Console.WriteLine("Distância: " + totalDistanciaRota8.ToString("#0"));
             }
             else if (Get9() == numeros9)
             {
@@ -239,7 +241,7 @@ namespace IA___Genetica
                     }
                 }
                 fitness9 = 1 / totalDistanciaRota9;
-                Console.WriteLine("Distância: " + totalDistanciaRota9.ToString("#0"));
+                //Console.WriteLine("Distância: " + totalDistanciaRota9.ToString("#0"));
             }
             else
             {
@@ -254,10 +256,9 @@ namespace IA___Genetica
                     }
                 }
                 fitness10 = 1 / totalDistanciaRota10;
-                Console.WriteLine("Distância: " + totalDistanciaRota10.ToString("#0"));
+                //Console.WriteLine("Distância: " + totalDistanciaRota10.ToString("#0"));
             }
-
-            if (GetMelhor() == numeros)
+            if (Get1() == numeros)
             {
                 rota.Clear();
                 totalDistanciaRota = 0;
@@ -273,7 +274,7 @@ namespace IA___Genetica
                 fitness = 1 / totalDistanciaRota;
                 //Console.WriteLine("Distância: " + totalDistanciaRota);
             }
-            else if (GetMelhor() == numeros2)
+            else if (Get2() == numeros2)
             {
                 rota2.Clear();
                 totalDistanciaRota2 = 0;
@@ -289,7 +290,7 @@ namespace IA___Genetica
                 fitness2 = 1 / totalDistanciaRota2;
                 //Console.WriteLine("Distância: " + totalDistanciaRota2);
             }
-            else if (GetMelhor() == numeros3)
+            else if (Get3() == numeros3)
             {
                 rota3.Clear();
                 totalDistanciaRota3 = 0;
@@ -305,7 +306,7 @@ namespace IA___Genetica
                 fitness3 = 1 / totalDistanciaRota3;
                 //Console.WriteLine("Distância: " + totalDistanciaRota3);
             }
-            else if (GetMelhor() == numeros4)
+            else if (Get4() == numeros4)
             {
                 rota4.Clear();
                 totalDistanciaRota4 = 0;
@@ -321,7 +322,7 @@ namespace IA___Genetica
                 fitness4 = 1 / totalDistanciaRota4;
                 //Console.WriteLine("Distância: " + totalDistanciaRota4);
             }
-            else if (GetPior() == numeros5)
+            else if (Get5() == numeros5)
             {
                 rota5.Clear();
                 totalDistanciaRota5 = 0;
@@ -337,7 +338,7 @@ namespace IA___Genetica
                 fitness5 = 1 / totalDistanciaRota5;
                 //Console.WriteLine("Distância: " + totalDistanciaRota5);
             }
-            else if (GetPior() == numeros6)
+            else if (Get6() == numeros6)
             {
                 rota6.Clear();
                 totalDistanciaRota6 = 0;
@@ -353,7 +354,7 @@ namespace IA___Genetica
                 fitness6 = 1 / totalDistanciaRota6;
                 //Console.WriteLine("Distância: " + totalDistanciaRota6);
             }
-            else if (GetPior() == numeros7)
+            else if (Get7() == numeros7)
             {
                 rota7.Clear();
                 totalDistanciaRota7 = 0;
@@ -369,7 +370,7 @@ namespace IA___Genetica
                 fitness7 = 1 / totalDistanciaRota7;
                 //Console.WriteLine("Distância: " + totalDistanciaRota7);
             }
-            else if (GetPior() == numeros8)
+            else if (Get8() == numeros8)
             {
                 rota8.Clear();
                 totalDistanciaRota8 = 0;
@@ -385,7 +386,7 @@ namespace IA___Genetica
                 fitness8 = 1 / totalDistanciaRota8;
                 //Console.WriteLine("Distância: " + totalDistanciaRota8);
             }
-            else if (GetPior() == numeros9)
+            else if (Get9() == numeros9)
             {
                 rota9.Clear();
                 totalDistanciaRota9 = 0;
@@ -416,6 +417,18 @@ namespace IA___Genetica
                 }
                 fitness10 = 1 / totalDistanciaRota10;
                 //Console.WriteLine("Distância: " + totalDistanciaRota10);
+            }
+             melhor = GetMelhor();
+            if (melhor < 1800) {
+                melhor2 = melhor;
+            }
+            if (melhor > melhor2)
+            {
+                Console.WriteLine("Distância: " + melhor2.ToString("#0"));
+            }
+            else
+            {
+                Console.WriteLine("Distância: " + melhor.ToString("#0"));
             }
         }
 
@@ -1703,138 +1716,138 @@ namespace IA___Genetica
             return cidadesDestino[index];
         }
 
-        public int[] GetPior()
+        public double GetPior()
         {
             if(totalDistanciaRota > totalDistanciaRota2 && totalDistanciaRota > totalDistanciaRota3 && totalDistanciaRota > totalDistanciaRota4 && totalDistanciaRota > totalDistanciaRota5
                && totalDistanciaRota > totalDistanciaRota6 && totalDistanciaRota > totalDistanciaRota7 && totalDistanciaRota > totalDistanciaRota8 && totalDistanciaRota > totalDistanciaRota9
                && totalDistanciaRota > totalDistanciaRota10)
             {
-                return numeros;
+                return totalDistanciaRota;
             }
 
             if (totalDistanciaRota2 > totalDistanciaRota && totalDistanciaRota2 > totalDistanciaRota3 && totalDistanciaRota2 > totalDistanciaRota4 && totalDistanciaRota2 > totalDistanciaRota5
                && totalDistanciaRota2 > totalDistanciaRota6 && totalDistanciaRota2 > totalDistanciaRota7 && totalDistanciaRota2 > totalDistanciaRota8 && totalDistanciaRota2 > totalDistanciaRota9
                && totalDistanciaRota2 > totalDistanciaRota10)
             {
-                return numeros2;
+                return totalDistanciaRota2;
             }
 
             if (totalDistanciaRota3 > totalDistanciaRota && totalDistanciaRota3 > totalDistanciaRota2 && totalDistanciaRota3 > totalDistanciaRota4 && totalDistanciaRota3 > totalDistanciaRota5
                && totalDistanciaRota3 > totalDistanciaRota6 && totalDistanciaRota3 > totalDistanciaRota7 && totalDistanciaRota3 > totalDistanciaRota8 && totalDistanciaRota3 > totalDistanciaRota9
                && totalDistanciaRota3 > totalDistanciaRota10)
             {
-                return numeros3;
+                return totalDistanciaRota3;
             }
 
             if (totalDistanciaRota4 > totalDistanciaRota && totalDistanciaRota4 > totalDistanciaRota2 && totalDistanciaRota4 > totalDistanciaRota3 && totalDistanciaRota4 > totalDistanciaRota5
                && totalDistanciaRota4 > totalDistanciaRota6 && totalDistanciaRota4 > totalDistanciaRota7 && totalDistanciaRota4 > totalDistanciaRota8 && totalDistanciaRota4 > totalDistanciaRota9
                && totalDistanciaRota4 > totalDistanciaRota10)
             {
-                return numeros4;
+                return totalDistanciaRota4;
             }
 
             if (totalDistanciaRota5 > totalDistanciaRota && totalDistanciaRota5 > totalDistanciaRota2 && totalDistanciaRota5 > totalDistanciaRota3 && totalDistanciaRota5 > totalDistanciaRota4
                && totalDistanciaRota5 > totalDistanciaRota6 && totalDistanciaRota5 > totalDistanciaRota7 && totalDistanciaRota5 > totalDistanciaRota8 && totalDistanciaRota5 > totalDistanciaRota9
                && totalDistanciaRota5 > totalDistanciaRota10)
             {
-                return numeros5;
+                return totalDistanciaRota5;
             }
 
             if (totalDistanciaRota6 > totalDistanciaRota && totalDistanciaRota6 > totalDistanciaRota2 && totalDistanciaRota6 > totalDistanciaRota3 && totalDistanciaRota6 > totalDistanciaRota4
                && totalDistanciaRota6 > totalDistanciaRota5 && totalDistanciaRota6 > totalDistanciaRota7 && totalDistanciaRota6 > totalDistanciaRota8 && totalDistanciaRota6 > totalDistanciaRota9
                && totalDistanciaRota6 > totalDistanciaRota10)
             {
-                return numeros6;
+                return totalDistanciaRota6;
             }
 
             if (totalDistanciaRota7 > totalDistanciaRota && totalDistanciaRota7 > totalDistanciaRota2 && totalDistanciaRota7 > totalDistanciaRota3 && totalDistanciaRota7 > totalDistanciaRota4
                && totalDistanciaRota7 > totalDistanciaRota5 && totalDistanciaRota7 > totalDistanciaRota6 && totalDistanciaRota7 > totalDistanciaRota8 && totalDistanciaRota7 > totalDistanciaRota9
                && totalDistanciaRota7 > totalDistanciaRota10)
             {
-                return numeros7;
+                return totalDistanciaRota7;
             }
 
             if (totalDistanciaRota8 > totalDistanciaRota && totalDistanciaRota8 > totalDistanciaRota2 && totalDistanciaRota8 > totalDistanciaRota3 && totalDistanciaRota8 > totalDistanciaRota4
                && totalDistanciaRota8 > totalDistanciaRota5 && totalDistanciaRota8 > totalDistanciaRota6 && totalDistanciaRota8 > totalDistanciaRota7 && totalDistanciaRota8 > totalDistanciaRota9
                && totalDistanciaRota8 > totalDistanciaRota10)
             {
-                return numeros8;
+                return totalDistanciaRota8;
             }
 
             if (totalDistanciaRota9 > totalDistanciaRota && totalDistanciaRota9 > totalDistanciaRota2 && totalDistanciaRota9 > totalDistanciaRota3 && totalDistanciaRota9 > totalDistanciaRota4
                && totalDistanciaRota9 > totalDistanciaRota5 && totalDistanciaRota9 > totalDistanciaRota6 && totalDistanciaRota9 > totalDistanciaRota7 && totalDistanciaRota9 > totalDistanciaRota8
                && totalDistanciaRota9 > totalDistanciaRota10)
             {
-                return numeros9;
+                return totalDistanciaRota9;
             }
-            return numeros10;
+            return totalDistanciaRota10;
         }
 
-        public int[] GetMelhor()
+        public double GetMelhor()
         {
             if (totalDistanciaRota < totalDistanciaRota2 && totalDistanciaRota < totalDistanciaRota3 && totalDistanciaRota < totalDistanciaRota4 && totalDistanciaRota < totalDistanciaRota5
                && totalDistanciaRota < totalDistanciaRota6 && totalDistanciaRota < totalDistanciaRota7 && totalDistanciaRota < totalDistanciaRota8 && totalDistanciaRota < totalDistanciaRota9
                && totalDistanciaRota < totalDistanciaRota10)
             {
-                return numeros;
+                return totalDistanciaRota;
             }
 
             if (totalDistanciaRota2 < totalDistanciaRota && totalDistanciaRota2 < totalDistanciaRota3 && totalDistanciaRota2 < totalDistanciaRota4 && totalDistanciaRota2 < totalDistanciaRota5
                && totalDistanciaRota2 < totalDistanciaRota6 && totalDistanciaRota2 < totalDistanciaRota7 && totalDistanciaRota2 < totalDistanciaRota8 && totalDistanciaRota2 < totalDistanciaRota9
                && totalDistanciaRota2 < totalDistanciaRota10)
             {
-                return numeros2;
+                return totalDistanciaRota2;
             }
 
             if (totalDistanciaRota3 < totalDistanciaRota && totalDistanciaRota3 < totalDistanciaRota2 && totalDistanciaRota3 < totalDistanciaRota4 && totalDistanciaRota3 < totalDistanciaRota5
                && totalDistanciaRota3 < totalDistanciaRota6 && totalDistanciaRota3 < totalDistanciaRota7 && totalDistanciaRota3 < totalDistanciaRota8 && totalDistanciaRota3 < totalDistanciaRota9
                && totalDistanciaRota3 < totalDistanciaRota10)
             {
-                return numeros3;
+                return totalDistanciaRota3;
             }
 
             if (totalDistanciaRota4 < totalDistanciaRota && totalDistanciaRota4 < totalDistanciaRota2 && totalDistanciaRota4 < totalDistanciaRota3 && totalDistanciaRota4 < totalDistanciaRota5
                && totalDistanciaRota4 < totalDistanciaRota6 && totalDistanciaRota4 < totalDistanciaRota7 && totalDistanciaRota4 < totalDistanciaRota8 && totalDistanciaRota4 < totalDistanciaRota9
                && totalDistanciaRota4 < totalDistanciaRota10)
             {
-                return numeros4;
+                return totalDistanciaRota4;
             }
 
             if (totalDistanciaRota5 < totalDistanciaRota && totalDistanciaRota5 < totalDistanciaRota2 && totalDistanciaRota5 < totalDistanciaRota3 && totalDistanciaRota5 < totalDistanciaRota4
                && totalDistanciaRota5 < totalDistanciaRota6 && totalDistanciaRota5 < totalDistanciaRota7 && totalDistanciaRota5 < totalDistanciaRota8 && totalDistanciaRota5 < totalDistanciaRota9
                && totalDistanciaRota5 < totalDistanciaRota10)
             {
-                return numeros5;
+                return totalDistanciaRota5;
             }
 
             if (totalDistanciaRota6 < totalDistanciaRota && totalDistanciaRota6 < totalDistanciaRota2 && totalDistanciaRota6 < totalDistanciaRota3 && totalDistanciaRota6 < totalDistanciaRota4
                && totalDistanciaRota6 < totalDistanciaRota5 && totalDistanciaRota6 < totalDistanciaRota7 && totalDistanciaRota6 < totalDistanciaRota8 && totalDistanciaRota6 < totalDistanciaRota9
                && totalDistanciaRota6 < totalDistanciaRota10)
             {
-                return numeros6;
+                return totalDistanciaRota6;
             }
 
             if (totalDistanciaRota7 < totalDistanciaRota && totalDistanciaRota7 < totalDistanciaRota2 && totalDistanciaRota7 < totalDistanciaRota3 && totalDistanciaRota7 < totalDistanciaRota4
                && totalDistanciaRota7 < totalDistanciaRota5 && totalDistanciaRota7 < totalDistanciaRota6 && totalDistanciaRota7 < totalDistanciaRota8 && totalDistanciaRota7 < totalDistanciaRota9
                && totalDistanciaRota7 < totalDistanciaRota10)
             {
-                return numeros7;
+                return totalDistanciaRota7;
             }
 
             if (totalDistanciaRota8 < totalDistanciaRota && totalDistanciaRota8 < totalDistanciaRota2 && totalDistanciaRota8 < totalDistanciaRota3 && totalDistanciaRota8 < totalDistanciaRota4
                && totalDistanciaRota8 < totalDistanciaRota5 && totalDistanciaRota8 < totalDistanciaRota6 && totalDistanciaRota8 < totalDistanciaRota7 && totalDistanciaRota8 < totalDistanciaRota9
                && totalDistanciaRota8 < totalDistanciaRota10)
             {
-                return numeros8;
+                return totalDistanciaRota8;
             }
 
             if (totalDistanciaRota9 < totalDistanciaRota && totalDistanciaRota9 < totalDistanciaRota2 && totalDistanciaRota9 < totalDistanciaRota3 && totalDistanciaRota9 < totalDistanciaRota4
                && totalDistanciaRota9 < totalDistanciaRota5 && totalDistanciaRota9 < totalDistanciaRota6 && totalDistanciaRota9 < totalDistanciaRota7 && totalDistanciaRota9 < totalDistanciaRota8
                && totalDistanciaRota9 < totalDistanciaRota10)
             {
-                return numeros9;
+                return totalDistanciaRota9;
             }
-            return numeros10;
+            return totalDistanciaRota10;
         }
 
         public void GeraRota()
